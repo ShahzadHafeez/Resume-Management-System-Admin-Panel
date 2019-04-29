@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Member
 from .models import Jo
+from .models import Intern
 
 # Create your views here.
 
@@ -36,3 +37,17 @@ def delete(request, id):
     job = Jo.objects.get(id=id)
     job.delete()
     return redirect('/crud/')
+	
+	
+def internForm(request):
+	return render(request,'crud/Create Internship.html')
+
+def createInternship(request):
+
+	intern = Intern(title=request.POST['title'], duration = request.POST['duration'],description = request.POST['description'],skills = request.POST['skills'],department = request.POST['dept'],status = request.POST['status'],city = request.POST['city'],location = request.POST['location'],startdate = request.POST['startdate'],enddate = request.POST['enddate'],closing_date = request.POST['date'],attached_file = request.POST['fileDoc'] )
+	intern.save()
+	return redirect('/')
+    
+    
+	
+	

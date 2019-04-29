@@ -16,27 +16,19 @@
 {% block body %}
 
 {% csrf_token %}
-	<section class="billboard light">
-		<header class="wrapper light">
-			<a href="#"><img class="logo" src="img/QR_1001.gif" alt=""/></a>
-			<nav>
-				<ul>
-					<a href="admin.html"><li><h3 style="color:#800000;">Show Jobs</h3></li></a>
-					<a href="seats.html"><li><h3 style="color:#800000;">Create Job</h3></li></a>
-					<a href="update.html"><li><h3 style="color:#800000;">Create Internship</h3></li></a>
-					<a href="airline.html"><li><h3 style="color:#800000;">Log Out</h3></li></a>
-				</ul>
-			</nav>
-		</header>
-
-		
-	</section><!--  End billboard  -->
+<ul style="background-color: #4CAF50;">
+  <li><a href="/">Home</a></li>
+  <li><a href="postJobs/">Post Job</a></li>
+  <li><a href="postInternship/">Post Internship</a></li>
+  <li><a href="/">Sign Out</a></li>
+  
+</ul>
 	
 	
 	
+<!--	
 	
-	
-		<table class="table table-bordered">
+<table class="table table-bordered">
     <thead class="alert-warning">
         <tr>
             <th>Job Title</th>
@@ -57,6 +49,38 @@
         {% endfor %}
     </tbody>
 </table>
+-->
+<br/><br/><br/><br/>
+
+<div class = "forum">
+	<h1">Edit or Delete Jobs</h1>
+	
+	  <table>
+		  <tr>
+			<th>Job Title</th>
+			<th>Description</th>
+			<th>Attached File</th>
+			<th>Edit/Delete</th>
+		  </tr>
+		   {% for job in Jobss %}
+		  <tr>
+			<td>{{ job.title }}</td>
+			<td>{{ job.descriptions }}</td>
+			<td>{{ job.document.url }}</td>
+			<td>
+			<a class="butt" href="edit/{{ job.id }}"> <span style="background-color:#4CAF50;" >Edit</span> </a> 
+			<a class="butt" href="delete/{{ job.id }}"> <span style="background-color:red;" > Delete </span>  </a>
+			
+			<!--
+			<input class="butt" id="appbutt" type="button" value="Approve" style="background-color:#4CAF50">
+			<input class="butt" id="dsapbutt" type="button" value="Disaprove" style="background-color:red">
+			-->
+			</td>
+		  </tr>
+		  {% endfor %}
+		  
+		</table>
+</div>		
 	
 	
 	

@@ -13,32 +13,17 @@
 </head>
 
 <body>
+{% block body %}
 
+{% csrf_token %}
 
-<section class="billboard light">
-		<header class="wrapper light">
-			<a href="#"><img class="logo" src="img/QR_1001.gif" alt=""/></a>
-			<nav>
-				<ul>
-					<a href="admin.html"><li><h3 style="color:#800000;">Show Jobs</h3></li></a>
-					<a href="seats.html"><li><h3 style="color:#800000;">Create Job</h3></li></a>
-					<a href="update.html"><li><h3 style="color:#800000;">Create Internship</h3></li></a>
-					<a href="airline.html"><li><h3 style="color:#800000;">Log Out</h3></li></a>
-				</ul>
-			</nav>
-		</header>
-
-		<div class=" caption light animated wow fadeInDown" >
-		<!-- <div class="caption silver animated wow fadeInDown clearfix"> -->
-			<section class="caption" >
-				<h1 class="caption">You Have Logged In As Admin</h1>
-			</section>
-			<!-- <p>dolore magna aliqua enim ad minim veniam occaecat</p> -->
-			<hr>
-		</div>
-		
-		<div class="shadow"></div>
-	</section><!--  End billboard  -->
+<ul style="background-color: #4CAF50;">
+  <li><a href="home">Home</a></li>
+  <li><a href="postJobs/">Post Job</a></li>
+  <li><a href="/">Post Internship</a></li>
+  <li><a href="/">Sign Out</a></li>
+  
+</ul>
 
 
 
@@ -55,7 +40,7 @@
 <br/><br/><br/>
 
 <div class = "forum">
-  <form action="/conformInternship" method="get" >
+  <form class="form-inline"  action="createInternship" method="POST" >
 
 
    <h4>Internship Title</h4>
@@ -63,7 +48,7 @@
    <br/><br/>
 
    <label><h4>Description</h4></label>
-    <input type="textarea" name="decrpition" placeholder="Job Description Here" required>
+    <input type="textarea" name="description" placeholder="Job Description Here" required>
 	<br/><br/>
 
    <label><h4>Duration</h4></label>
@@ -131,4 +116,8 @@
     <br/><br/>
     <br/><br/>
   </form>
+  
 </div>
+{% endblock %}
+</body>
+</html>

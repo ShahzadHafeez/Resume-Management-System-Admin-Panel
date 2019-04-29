@@ -69,3 +69,22 @@ class Jo(models.Model):
 
     def __str__(self):
         return self.title + " " + self.descriptions
+		
+class Intern(models.Model):
+	title=models.CharField(max_length=20)
+	duration=models.PositiveIntegerField()
+	description=models.CharField(max_length=100)
+	skills=models.CharField(max_length=50)
+	department=models.CharField(max_length=50)
+	status=models.CharField(max_length=5)
+	city=models.CharField(max_length=50) 
+	location=models.CharField(max_length=50)
+	startdate=models.DateField()
+	enddate=models.DateField()
+	closing_date=models.DateField()
+	attached_file=models.FileField()
+	
+	def __str__(self):
+		return self.title + " " + self.description
+		
+		
