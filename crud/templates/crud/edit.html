@@ -1,0 +1,124 @@
+{% extends 'crud/base.html' %}
+{% block body %}
+    <form method="POST" action="update/{{ job.id }}">
+        {% csrf_token %}
+        <h4>Job Title</h4>
+   <input type="text" name="jobtitle"  placeholder="Web Developer" required>
+   <br/><br/>
+
+   <label><h4>Job Status</h4></label>
+	<input id="desig" list="listStatus" name="jobstatus" placeholder="Select Job Status" required>
+	  <datalist id="listStatus">
+		  <option value="Open">Open</option>
+		  <option value="Close">Close</option>
+
+	  </datalist>
+	  <br/><br/>
+
+   <h4>Designation</h4>
+		<input id="desig" list="listDesignations" name="designation" placeholder="Select Designation" required>
+	  <datalist id="listDesignations">
+		  <option value="Junior">Junior</option>
+		  <option value="Senior">Senior</option>
+		  <option value="Team Lead">Team Lead</option>
+		  <option value="Manager">Manager</option>
+
+	  </datalist>
+    <br/><br/>
+
+
+   <label><h4>Job Description</h4></label>
+    <input type="textarea" name="decrpition" placeholder="Job Description Here" required>
+	<br/><br/>
+
+  <label><h4>Required Skills</h4></label>
+    <input type="text" name="skills" placeholder="C++ / Java" required>
+    <br/><br/>
+
+	<label><h4>Department</h4></label>
+		<input id="desig" list="listDepartment" name="department" placeholder="Select Destination" required>
+	  <datalist id="listDepartment">
+		  <option value="Tecnical">Tecnical</option>
+		  <option value="Human Resourse">Human Resourse</option>
+
+	  </datalist>
+    <br/><br/>
+
+
+
+
+
+	<label><h4>Min Education</h4></label>
+	<input id="desig" list="listEducation" name="minEdu" placeholder="Select Min Education" required>
+	  <datalist id="listEducation">
+		  <option value="Bachlors">Bachlors</option>
+		  <option value="Masters">Masters</option>
+
+	  </datalist>
+	  <br/><br/>
+
+    <label><h4>Min Experience</h4></label>
+    <input type="number" name="experience" placeholder="0" required>
+	<br/><br/>
+
+	<label><h4>Salary</h4></label>
+    <input type="number" name="salary" placeholder="45,000 PKR" required>
+	<br/><br/>
+
+	<label><h4>Additional Benefits</h4></label>
+    <input type="text" name="benefits" placeholder="any additional benefits">
+	<br/><br/>
+
+
+
+	<label><h4>Required Gender</h4></label>
+	<input id="desig" list="listGender" name="gender" placeholder="Select Gender" required>
+	  <datalist id="listGender">
+		  <option value="Male">Male</option>
+		  <option value="Female">Female</option>
+		  <option value="Both">Both</option>
+
+	  </datalist>
+	  <br/><br/>
+
+	  <h4>Attach Details Document</h4>
+	<input type="file" name="fileDoc" accept="image/*">
+
+
+	<br/><br/>
+
+	<label><h4>Age Limit</h4></label>
+	  <input id="age" type="number" name="minAge" placeholder="min Age" required>
+	  <input id="age" type="number" name="maxAge" placeholder="max Age" required>
+	<br/><br/>
+
+
+	<label><h4>Location Details</h4></label>
+	<input id="city" list="listCity" name="city" placeholder="Select City" required>
+	  <datalist id="listCity">
+		  <option value="Lahore">Lahore</option>
+		  <option value="Karachi">Karachi</option>
+
+	  </datalist>
+	  <input id="location" type="text" name="location" placeholder="Location" required>
+	<br/><br/>
+
+
+
+  	<h4>Closing Date
+    <input type="date" id="Cdate" name="date" placeholder="last date" required">
+    </h4>
+
+
+	
+	
+
+    <br/><br/>
+
+    <input type="submit" value="Submit">
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    </form>
+{% endblock %}

@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Post Internship</title>
+	<meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'crud/css/header.css'%} ">
+	<link rel="stylesheet" type="text/css" href="{% static 'crud/css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'crud/css/main.css' %}">
+
+</head>
+
+<body>
+
+
+<section class="billboard light">
+		<header class="wrapper light">
+			<a href="#"><img class="logo" src="img/QR_1001.gif" alt=""/></a>
+			<nav>
+				<ul>
+					<a href="admin.html"><li><h3 style="color:#800000;">Show Jobs</h3></li></a>
+					<a href="seats.html"><li><h3 style="color:#800000;">Create Job</h3></li></a>
+					<a href="update.html"><li><h3 style="color:#800000;">Create Internship</h3></li></a>
+					<a href="airline.html"><li><h3 style="color:#800000;">Log Out</h3></li></a>
+				</ul>
+			</nav>
+		</header>
+
+		<div class=" caption light animated wow fadeInDown" >
+		<!-- <div class="caption silver animated wow fadeInDown clearfix"> -->
+			<section class="caption" >
+				<h1 class="caption">You Have Logged In As Admin</h1>
+			</section>
+			<!-- <p>dolore magna aliqua enim ad minim veniam occaecat</p> -->
+			<hr>
+		</div>
+		
+		<div class="shadow"></div>
+	</section><!--  End billboard  -->
+
+
+
+
+
+<div class="title animated wow fadeIn">
+<br/>
+<br/>
+
+	<h3 style="text-align:center;">Post Internship Details</h3>
+	<hr class="separator"/>
+</div>
+
+<br/><br/><br/>
+
+<div class = "forum">
+  <form action="/conformInternship" method="get" >
+
+
+   <h4>Internship Title</h4>
+   <input type="text" name="title" placeholder="Web Developer" required>
+   <br/><br/>
+
+   <label><h4>Description</h4></label>
+    <input type="textarea" name="decrpition" placeholder="Job Description Here" required>
+	<br/><br/>
+
+   <label><h4>Duration</h4></label>
+    <input type="number" name="duration" placeholder="2 month" required>
+	<br/><br/>
+
+   <label><h4>Required Skills</h4></label>
+    <input type="text" name="skills" placeholder="C++ / Java" required>
+    <br/><br/>
+
+	<label><h4>Department</h4></label>
+		<input id="desig" name="dept" list="listDepartment" placeholder="Select Destination" required>
+	  <datalist id="listDepartment">
+		  <option value="Tecnical">Tecnical</option>
+		  <option value="Human Resourse">Human Resourse</option>
+
+	  </datalist>
+    <br/><br/>
+
+
+  <label><h4>Internship Status</h4></label>
+	<input id="desig" list="listStatus" name="status" placeholder="Select Job Status" required>
+	  <datalist id="listStatus">
+		  <option value="Open">Open</option>
+		  <option value="Close">Close</option>
+
+	  </datalist>
+	  <br/><br/>
+
+   <h4>Attach Details Document</h4>
+      <input type="file" name="fileDoc" accept="image/*">
+   <br/><br/>
+
+      <label><h4>Location Details</h4></label>
+	<input id="city" list="listCity" name="city" placeholder="Select City" required>
+	  <datalist id="listCity">
+		  <option value="Lahore">Lahore</option>
+		  <option value="Karachi">Karachi</option>
+
+	  </datalist>
+	  <input id="location" type="text" name="location" placeholder="Location" required>
+	<br/><br/><br/>
+
+
+
+
+	<label><h4>Internship Period</h4></label>
+	<h6>Start Date
+    <input type="date" id="Cdate" name="startdate" placeholder="start date" required">
+	End Date
+    <input type="date" id="Cdate" name="enddate" placeholder="end date" required"></h6>
+	<br/><br/>
+
+  	<h4>Closing Date
+    <input type="date" id="Cdate" name="date" placeholder="last date" required">
+    </h4>
+
+
+
+    <br/><br/>
+
+    <input type="submit" value="Submit">
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+  </form>
+</div>
